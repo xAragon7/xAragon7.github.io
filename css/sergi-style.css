@@ -1,115 +1,120 @@
 /* --- GENEL SAYFA AYARLARI --- */
 .sergi-page {
-    background-color: #ffffff !important; /* Arka plan bembeyaz */
-    color: #000000 !important; /* Genel yazı rengi siyah */
-    overflow-x: hidden; /* Sayfanın sağa sola kaymasını engeller */
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    overflow-x: hidden;
 }
 
-/* --- YAN MENÜ (SIDEBAR) DÜZENLEMESİ --- */
+/* --- YAN MENÜ (SIDEBAR) DÜZELTME --- */
 .sergi-sidebar {
+    width: 260px !important; /* Genişliği 260 piksele sabitledik */
+    height: 100vh !important; /* Boyunu ekranın tamamına sabitledik */
+    position: fixed !important; /* Sen kaydırsan da o solda çakılı kalır */
+    top: 0;
+    left: 0;
     background-color: #ffffff !important; 
-    border-right: 1px solid #e5e5e7 !important; /* Menü ve içerik arasındaki ince çizgi */
-    z-index: 1000 !important; /* Menünün her zaman en üstte kalmasını sağlar */
+    border-right: 1px solid #e5e5e7 !important;
+    z-index: 1000 !important; /* Her şeyin üstünde durur */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Menüdeki logonun rengi */
-.sergi-sidebar .logo { color: #000 !important; }
-
-/* Menü linklerinin normal hali */
-.sergi-sidebar nav ul li a { 
+/* Sidebar içindeki yazıların devleşmesini engelleme */
+.sergi-sidebar .logo { 
+    font-size: 24px !important; 
     color: #000 !important; 
-    background: transparent !important; 
+    margin-bottom: 50px;
+    font-weight: 700;
 }
 
-/* Menü linklerinin üzerine gelince veya aktifkenki hali */
+.sergi-sidebar nav ul { list-style: none; }
+
+.sergi-sidebar nav ul li a { 
+    font-size: 17px !important; /* Menü yazılarını ideal boyuta çektik */
+    color: #000 !important; 
+    text-decoration: none;
+    padding: 12px 15px;
+    display: block;
+    border-radius: 10px;
+}
+
 .sergi-sidebar nav ul li a:hover, 
 .sergi-sidebar nav ul li a.active {
-    background-color: #f5f5f7 !important; /* Hafif Apple grisi arka plan */
+    background-color: #f5f5f7 !important;
     color: #000 !important;
 }
 
-/* --- ORTADAKİ SABİT "PERSPEKTİF" YAZISI --- */
+.sergi-sidebar .submenu { 
+    padding-left: 15px; 
+    display: block !important; /* Sergi sayfasında açık kalsın */
+}
+
+.sergi-sidebar .submenu li a {
+    font-size: 14px !important;
+    color: #86868b !important;
+}
+
+/* --- ORTADAKİ SABİT YAZI --- */
 .sticky-text-container {
-    position: fixed; /* Sayfayı kaysan da yazı ekranda çakılı kalır */
+    position: fixed;
     top: 50%;
-    left: 58%; /* Sidebar payını hesaplayarak tam ortalar */
+    left: calc(50% + 130px); /* Sidebar genişliğinin yarısı kadar sağa kaydırdık tam ortalamak için */
     transform: translate(-50%, -50%);
-    z-index: 10; /* Yazı orta katmanda (Bazı resimler altında, bazıları üstünde kalır) */
-    width: 100%;
+    z-index: 10;
+    width: auto;
     text-align: center;
-    pointer-events: none; /* Mouse'un resimlere tıklayabilmesi için yazıyı "hayalet" yapar */
+    pointer-events: none;
 }
 
 .big-title {
-    font-size: 12vw; /* Ekran genişliğine göre devasa boyut */
+    font-size: 10vw; /* Devasa yazı */
     font-weight: 900;
-    letter-spacing: -5px; /* Harfleri birbirine yaklaştırır, modern durur */
+    letter-spacing: -5px;
     color: #000;
-    margin: 0;
 }
 
 /* --- RESİM GALERİ ALANI --- */
 #sergi-gallery {
     position: relative;
-    height: 400vh; /* Toplam kaydırma uzunluğu */
-    margin-left: 260px; /* Sidebar'ın üzerine binmemesi için boşluk */
+    height: 450vh; 
+    margin-left: 260px; /* İçeriği menünün arkasından kurtarır */
 }
 
 .drawing-container {
-    position: absolute; /* Resimleri sayfada istediğimiz koordinata koymamızı sağlar */
+    position: absolute;
     display: block;
 }
 
 .drawing-container img {
-    width: 100%; /* Konteynere verdiğimiz genişliği tam doldurur */
+    width: 100%;
     height: auto;
-    border-radius: 4px; /* Köşeleri hafif yuvarlatır */
-    box-shadow: 0 40px 100px rgba(0,0,0,0.15); /* Havalı derinlik gölgesi */
+    border-radius: 4px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.15);
 }
 
-/* --- RESİMLERİN KONUMLARI, BOYUTLARI VE KATMANLARI --- */
+/* --- RESİMLERİN KONUMLARI --- */
 
-/* 1. Resim: SOL ÜST - Yazının ÖNÜNDE */
+/* 1. ve 5. Resim: Üstte Yan Yana/İç İçe */
 #drawing-1 {
-    top: 20vh; /* Sayfanın en üstünden mesafe */
-    left: 15%; /* Soldan mesafe */
-    width: 40%; /* TEKRAR BÜYÜTÜLDÜ */
-    z-index: 25; /* 10'dan büyük olduğu için yazının ÖNÜNDEN geçer */
+    top: 20vh;
+    left: 15%; 
+    width: 40%; 
+    z-index: 25; /* ÖNDE */
 }
 
-/* 5. Resim: 1 İLE AYNI HİZADA (SOLDA) - Yazının ARKASINDA */
 #drawing-5 {
-    top: 20vh; /* 1. resimle tam aynı hizada kanka! */
-    left: 5%; /* 1'in daha solunda durur */
-    width: 30%; /* BÜYÜK BOY */
-    z-index: 5; /* 10'dan küçük olduğu için yazının ARKASINDAN geçer */
+    top: 20vh;
+    left: 5%; 
+    width: 30%; 
+    z-index: 5; /* ARKADA */
 }
 
-/* 2. Resim: SAĞDA - Yazının ARKASINDA (Aralar yaklaştırıldı) */
-#drawing-2 {
-    top: 70vh; /* 1. resme çok yakın, kaydırınca hemen gelir */
-    right: 10%;
-    width: 28%; 
-    z-index: 4; 
-}
+#drawing-2 { top: 100vh; right: 10%; width: 28%; z-index: 4; }
+#drawing-3 { top: 180vh; left: 8%; width: 35%; z-index: 6; }
+#drawing-4 { top: 260vh; right: 5%; width: 45%; z-index: 26; }
 
-/* 3. Resim: SOL ORTA - Yazının ARKASINDA */
-#drawing-3 {
-    top: 130vh;
-    left: 8%;
-    width: 35%; 
-    z-index: 6; 
-}
-
-/* 4. Resim: SAĞ ALT - Yazının ÖNÜNDE */
-#drawing-4 {
-    top: 200vh;
-    right: 5%;
-    width: 45%; /* DEV BOY */
-    z-index: 26; 
-}
-
-/* --- FOOTER (SAYFA SONU) --- */
+/* --- FOOTER --- */
 .sergi-footer {
     position: relative;
     z-index: 100;
