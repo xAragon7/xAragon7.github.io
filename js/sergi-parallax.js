@@ -2,20 +2,25 @@ document.addEventListener("DOMContentLoaded", function() {
     const drawings = document.querySelectorAll('.drawing-container');
     
     window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let scrollValue = window.scrollY;
         
-        drawings.forEach(function(drawing, index) {
-            // Her resim için farklı hız faktörü (Hızları el_1'den el_5'e değişir)
-            let speeds = [0.2, 0.5, 0.15, 0.6, 0.3];
+        drawings.forEach((drawing, index) => {
+            // Her resme farklı bir hız veriyoruz
+            // 0.2 yavaş, 0.8 hızlı demek
+            let speeds = [0.2, 0.6, 0.3, 0.7, 0.4];
             let speed = speeds[index];
             
-            let yPos = -(scrollTop * speed);
+            // Resimleri yukarı kaydır
+            let yPos = -(scrollValue * speed);
             drawing.style.transform = `translateY(${yPos}px)`;
             
-            // Fade-out efekti: Resim ekrandan uzaklaştıkça şeffaflaşır
-            let offset = drawing.getBoundingClientRect().top;
-            let opacity = 1 - (Math.abs(offset) / window.innerHeight);
-            drawing.style.opacity = Math.max(0, Math.min(1, opacity + 0.5));
+            // Ekrandan uzaklaştıkça hafifçe solma efekti
+            let rect = drawing.getBoundingClientRect();
+            if (rect.top < 0) {
+                drawing.style.opacity = 1 - (Math.abs(rect.top) / 1000);
+            } else {
+                drawing.style.opacity = 1;
+            }
         });
     });
 });
