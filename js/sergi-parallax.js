@@ -1,26 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener('scroll', function() {
+    const scrollValue = window.scrollY;
     const drawings = document.querySelectorAll('.drawing-container');
-    
-    window.addEventListener('scroll', function() {
-        let scrollValue = window.scrollY;
+
+    drawings.forEach((drawing, index) => {
+        // Hızları belirginleştirdim
+        const speeds = [0.15, 0.4, 0.2, 0.5, 0.25];
+        const speed = speeds[index];
         
-        drawings.forEach((drawing, index) => {
-            // Her resme farklı bir hız veriyoruz
-            // 0.2 yavaş, 0.8 hızlı demek
-            let speeds = [0.2, 0.6, 0.3, 0.7, 0.4];
-            let speed = speeds[index];
-            
-            // Resimleri yukarı kaydır
-            let yPos = -(scrollValue * speed);
-            drawing.style.transform = `translateY(${yPos}px)`;
-            
-            // Ekrandan uzaklaştıkça hafifçe solma efekti
-            let rect = drawing.getBoundingClientRect();
-            if (rect.top < 0) {
-                drawing.style.opacity = 1 - (Math.abs(rect.top) / 1000);
-            } else {
-                drawing.style.opacity = 1;
-            }
-        });
+        // Başlangıç pozisyonlarını hesaba katan dikey hareket
+        const yPos = -(scrollValue * speed);
+        drawing.style.transform = `translate3d(0, ${yPos}px, 0)`;
     });
 });
