@@ -1,52 +1,69 @@
-/* Sergi Teması: Beyaz Üstüne Siyah */
 body {
     background-color: #ffffff !important;
     color: #000000 !important;
+    overflow-x: hidden;
 }
 
-.sidebar { background-color: #f5f5f7 !important; border-right: 1px solid #e5e5e7 !important; }
+/* Yan Menü Renkleri (Beyaz temaya uyum) */
+.sidebar { background-color: #f5f5f7 !important; border-right: 1px solid #d2d2d7 !important; }
 .sidebar .logo, .sidebar nav ul li a { color: #1d1d1f !important; }
-.sidebar nav ul li a:hover { background-color: #e8e8ed !important; }
 
-.content { background-color: #ffffff; padding-bottom: 500px; }
-.hero h1 { color: #000 !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.content {
+    position: relative;
+    background-color: #fff;
+}
 
-/* Parallax Alanı */
+/* ORTADAKİ BÜYÜK YAZI */
+.sticky-text-container {
+    position: fixed;
+    top: 50%;
+    left: 55%; /* Sidebar'ı hesaba katarak ortaladık */
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Tam orta katman */
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.big-title {
+    font-size: 12vw; /* Devasa yazı boyutu */
+    font-weight: 900;
+    letter-spacing: -5px;
+    margin: 0;
+    color: #000;
+}
+
+/* RESİMLERİN AYARLARI */
 #sergi-gallery {
     position: relative;
-    height: 400vh; /* Kaydırma alanı için uzunluk */
+    height: 500vh; /* Sayfayı uzun yaptık ki kaydırdıkça resimler geçsin */
+    margin-left: 260px;
 }
 
 .drawing-container {
     position: absolute;
-    width: 100%;
     display: flex;
     justify-content: center;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-
-/* Katmanlama (z-index) ve Büyüklükler */
-#drawing-1 { top: 20vh; z-index: 1; } /* En arkada */
-#drawing-1 img { width: 50%; }
-
-#drawing-2 { top: 80vh; z-index: 20; } /* En önde */
-#drawing-2 img { width: 30%; }
-
-.floating-text {
-    position: absolute;
-    top: 150vh;
     width: 100%;
-    text-align: center;
-    z-index: 10; /* Yazı ortada (1 ve 3 arkasında, 2 ve 4 önünde kalacak) */
-    padding: 0 10%;
 }
 
-#drawing-3 { top: 220vh; z-index: 2; } /* Arkada */
-#drawing-3 img { width: 70%; }
+.drawing-container img {
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
 
-#drawing-4 { top: 290vh; z-index: 25; } /* Çok önde */
-#drawing-4 img { width: 25%; }
+/* Katmanlar: Bazısı yazının altında (z-index: 5), bazısı üstünde (z-index: 15) */
+#drawing-1 { top: 20vh; z-index: 5; } 
+#drawing-1 img { width: 40%; }
 
-#drawing-5 { top: 350vh; z-index: 3; } /* Arkada */
+#drawing-2 { top: 120vh; z-index: 15; } 
+#drawing-2 img { width: 25%; }
+
+#drawing-3 { top: 220vh; z-index: 5; } 
+#drawing-3 img { width: 50%; }
+
+#drawing-4 { top: 320vh; z-index: 15; } 
+#drawing-4 img { width: 30%; }
+
+#drawing-5 { top: 420vh; z-index: 5; } 
 #drawing-5 img { width: 45%; }
