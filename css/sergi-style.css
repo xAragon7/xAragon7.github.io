@@ -1,11 +1,11 @@
-/* GENEL SERGİ TEMASI */
+/* GENEL SERGİ TEMASI - TERTEMİZ BEYAZ */
 .sergi-page {
     background-color: #ffffff !important;
     color: #000000 !important;
     overflow-x: hidden;
 }
 
-/* MENÜNÜN OKUNABİLİRLİĞİ (SİYAH & BEYAZ DENGESİ) */
+/* MENÜNÜN OKUNABİLİRLİĞİ */
 .sergi-sidebar {
     background-color: #ffffff !important;
     border-right: 1px solid #e5e5e7 !important;
@@ -20,11 +20,11 @@
     color: #000 !important;
 }
 
-/* PERSPEKTİF YAZISI (FADE-OUT İÇİN) */
+/* PERSPEKTİF YAZISI - MERKEZ ÇIPA */
 .sticky-text-container {
     position: fixed;
     top: 50%;
-    left: 58%; /* Sidebar payı ile ortalama */
+    left: 58%;
     transform: translate(-50%, -50%);
     z-index: 10;
     width: 100%;
@@ -33,7 +33,7 @@
 }
 
 .big-title {
-    font-size: 10vw; /* Boyutu biraz küçülttüm (15'ten 10'a) */
+    font-size: 10vw; 
     font-weight: 900;
     color: #000;
     margin: 0;
@@ -43,8 +43,8 @@
 /* RESİM GALERİSİ ALANI */
 #sergi-gallery {
     position: relative;
-    height: 550vh; /* Kaydırma alanı */
-    margin-left: 260px; /* Sidebar'dan kaçış */
+    height: 600vh; 
+    margin-left: 260px;
 }
 
 .drawing-container {
@@ -56,49 +56,49 @@
 .drawing-container img {
     width: 100%;
     height: auto;
-    border-radius: 2px; /* Keskin, modern bir duruş */
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08); /* Daha yumuşak gölge */
+    border-radius: 2px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05); /* Daha hafif gölge */
 }
 
-/* YENİ BOYUTLAR VE DAĞILIM (EL_1 - EL_5) */
+/* YENİ "MİNİMAL" BOYUTLAR VE KONUMLAR (EL_1 - EL_5) */
 
-/* 1. Resim: SOLDA, Yazının ÖNÜNDE */
+/* 1. Resim: SOL ÜST, Yazının ÖNÜNDE */
 #drawing-1 {
-    top: 30vh;
-    left: 5%; 
-    width: 35%; /* %60'tan %35'e düştü */
+    top: 40vh;
+    left: 8%; 
+    width: 12%; /* Devasalıktan minikliğe: %12 */
     z-index: 25;
 }
 
-/* 2. Resim: SAĞDA, Yazının ARKASINDA */
+/* 2. Resim: SAĞ ÜST, Yazının ARKASINDA */
 #drawing-2 {
-    top: 130vh;
-    right: 10%;
-    width: 22%; /* %25'ten %22'ye düştü */
+    top: 150vh;
+    right: 12%;
+    width: 8%; /* Küçük bir detay: %8 */
     z-index: 5;
 }
 
-/* 3. Resim: MERKEZ-SOL, Yazının ARKASINDA */
+/* 3. Resim: SOL ORTA, Yazının ARKASINDA */
 #drawing-3 {
-    top: 240vh;
+    top: 270vh;
     left: 15%;
-    width: 30%; /* %45'ten %30'a düştü */
+    width: 10%; /* %10 */
     z-index: 6;
 }
 
-/* 4. Resim: SAĞDA, Yazının ÖNÜNDE */
+/* 4. Resim: SAĞ ALT, Yazının ÖNÜNDE */
 #drawing-4 {
-    top: 350vh;
-    right: 5%;
-    width: 28%; /* %55'ten %28'e düştü */
+    top: 390vh;
+    right: 10%;
+    width: 11%; /* %11 */
     z-index: 26;
 }
 
-/* 5. Resim: MERKEZ, Yazının ARKASINDA */
+/* 5. Resim: MERKEZ ALT, Yazının ARKASINDA */
 #drawing-5 {
-    top: 460vh;
-    left: 30%;
-    width: 32%; /* %40'tan %32'ye düştü */
+    top: 510vh;
+    left: 25%;
+    width: 9%; /* %9 */
     z-index: 7;
 }
 
@@ -106,7 +106,7 @@
     position: relative;
     z-index: 100;
     background: #fff;
-    padding: 100px 0;
+    padding: 150px 0;
     text-align: center;
     margin-left: 260px;
 }
