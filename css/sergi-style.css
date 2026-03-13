@@ -1,108 +1,112 @@
-/* --- GENEL SAYFA AYARLARI --- */
+/* GENEL SERGİ TEMASI - TERTEMİZ BEYAZ */
 .sergi-page {
-    background-color: #ffffff !important; /* Arka plan bembeyaz */
-    color: #000000 !important; /* Yazılar simsiyah */
-    overflow-x: hidden; /* Sağa sola kaymayı engelle */
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    overflow-x: hidden;
 }
 
-/* --- YAN MENÜ (SIDEBAR) DÜZENLEMESİ --- */
+/* MENÜNÜN OKUNABİLİRLİĞİ */
 .sergi-sidebar {
-    background-color: #ffffff !important; 
-    border-right: 1px solid #e5e5e7 !important; /* İnce Apple tarzı çizgi */
-    z-index: 1000 !important; /* Menü her zaman en üstte kalsın */
+    background-color: #ffffff !important;
+    border-right: 1px solid #e5e5e7 !important;
+    z-index: 1000 !important;
 }
 
 .sergi-sidebar .logo { color: #000 !important; }
-.sergi-sidebar nav ul li a { color: #000 !important; }
+.sergi-sidebar nav ul li a { color: #000 !important; background: transparent !important; }
 .sergi-sidebar nav ul li a:hover, 
 .sergi-sidebar nav ul li a.active {
-    background-color: #f5f5f7 !important; /* Üzerine gelince hafif gri */
+    background-color: #f5f5f7 !important;
+    color: #000 !important;
 }
 
-/* --- ORTADAKİ SABİT YAZI --- */
+/* PERSPEKTİF YAZISI - MERKEZ ÇIPA */
 .sticky-text-container {
-    position: fixed; /* Sayfayı kaydırsan da ekranda çakılı kalır */
+    position: fixed;
     top: 50%;
     left: 58%;
     transform: translate(-50%, -50%);
-    z-index: 10; /* Yazı orta katmanda (Bazı resimler altında, bazıları üstünde) */
+    z-index: 10;
     width: 100%;
     text-align: center;
-    pointer-events: none; /* Mouse resimlere tıklayabilsin diye yazıyı "hayalet" yaptık */
+    pointer-events: none;
 }
 
 .big-title {
-    font-size: 12vw; /* Ekran genişliğine göre devasa boyut */
+    font-size: 10vw; 
     font-weight: 900;
-    letter-spacing: -5px;
+    color: #000;
+    margin: 0;
+    transition: opacity 0.1s linear;
 }
 
-/* --- RESİM GALERİ ALANI --- */
+/* RESİM GALERİSİ ALANI */
 #sergi-gallery {
     position: relative;
-    height: 400vh; /* Toplam kaydırma uzunluğu */
-    margin-left: 260px; /* Sidebar payı */
+    height: 600vh; 
+    margin-left: 260px;
 }
 
 .drawing-container {
-    position: absolute; /* Resimleri serbestçe konumlandırmak için */
+    position: absolute;
     display: block;
+    opacity: 0.9;
 }
 
 .drawing-container img {
-    width: 100%; /* Konteyner genişliği kadar yayıl */
+    width: 100%;
     height: auto;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.15); /* Havalı derinlik gölgesi */
+    border-radius: 2px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05); /* Daha hafif gölge */
 }
 
-/* --- RESİMLERİN KONUMLARI VE KATMANLARI --- */
+/* YENİ "MİNİMAL" BOYUTLAR VE KONUMLAR (EL_1 - EL_5) */
 
-/* 1. Resim: SOL ÜSTTE */
+/* 1. Resim: SOL ÜST, Yazının ÖNÜNDE */
 #drawing-1 {
-    top: 25vh; /* Yukarıdan mesafe */
-    left: 5%; /* Soldan mesafe */
-    width: 45%; /* BÜYÜK BOY */
-    z-index: 25; /* YAZININ ÖNÜNDE (z-index > 10) */
+    top: 40vh;
+    left: 8%; 
+    width: 12%; /* Devasalıktan minikliğe: %12 */
+    z-index: 25;
 }
 
-/* 5. Resim: 1 İLE AYNI HİZADA VE SOLDAN SOKULMUŞ */
-#drawing-5 {
-    top: 25vh; /* 1 ile aynı hizada kanka! */
-    left: 20%; /* 1'in üstüne biraz binsin, kaotik dursun */
-    width: 35%; /* BÜYÜK BOY */
-    z-index: 5; /* YAZININ ARKASINDA (z-index < 10) */
-}
-
-/* 2. Resim: SAĞDA VE ÇOK YAKIN (Üsttekinin hemen bitiminde) */
+/* 2. Resim: SAĞ ÜST, Yazının ARKASINDA */
 #drawing-2 {
-    top: 70vh; /* Mesafeyi daralttım, 1 ve 5'e değebilir */
-    right: 5%; 
-    width: 30%; 
-    z-index: 15; /* YAZININ ÖNÜNDE */
+    top: 150vh;
+    right: 12%;
+    width: 8%; /* Küçük bir detay: %8 */
+    z-index: 5;
 }
 
-/* 3. Resim: SOLDA, YAZININ ARKASINDAN SÜZÜLEN */
+/* 3. Resim: SOL ORTA, Yazının ARKASINDA */
 #drawing-3 {
-    top: 130vh;
-    left: 10%;
-    width: 50%; /* DEV BOY */
-    z-index: 4; /* YAZININ ARKASINDA */
+    top: 270vh;
+    left: 15%;
+    width: 10%; /* %10 */
+    z-index: 6;
 }
 
-/* 4. Resim: SAĞDA, EN ÖNDE VE YUKARI ÇEKİLDİ */
+/* 4. Resim: SAĞ ALT, Yazının ÖNÜNDE */
 #drawing-4 {
-    top: 190vh;
-    right: -5%; /* Biraz ekran dışına taşsın, havalı durur */
-    width: 40%; 
-    z-index: 30; /* EN ÖNDE */
+    top: 390vh;
+    right: 10%;
+    width: 11%; /* %11 */
+    z-index: 26;
 }
 
-/* --- FOOTER (SAYFA SONU) --- */
+/* 5. Resim: MERKEZ ALT, Yazının ARKASINDA */
+#drawing-5 {
+    top: 510vh;
+    left: 25%;
+    width: 9%; /* %9 */
+    z-index: 7;
+}
+
 .sergi-footer {
     position: relative;
     z-index: 100;
     background: #fff;
-    padding: 100px 0;
+    padding: 150px 0;
     text-align: center;
     margin-left: 260px;
 }
