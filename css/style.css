@@ -1,50 +1,120 @@
-/* Apple tarzı modern ve temiz sıfırlama */
-body {
+/* Genel Ayarlar ve Apple Font Ailesi */
+* {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0a0a0a; /* Şık ve derin bir siyah */
-    color: #f5f5f7; /* Göz yormayan kırık beyaz */
-    line-height: 1.6;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Karşılama Ekranı (Hero Section) */
-header {
-    height: 100vh; /* Tam ekranı kapla */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #000000;
+    color: #f5f5f7;
+    display: flex; /* Yan menü ve içeriği yan yana getirir */
+}
+
+/* YAN MENÜ (SIDEBAR) TASARIMI */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #111111;
+    padding: 40px 20px;
+    position: fixed; /* Sol tarafa sabitler */
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    padding-left: 15px;
+    letter-spacing: -1px;
+    color: #fff;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #86868b;
+    font-size: 17px;
+    padding: 12px 15px;
+    display: block;
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Yumuşak geçiş efekti */
+}
+
+.sidebar nav ul li a:hover, .sidebar nav ul li a.active {
+    background-color: #1c1c1e;
+    color: #ffffff;
+}
+
+/* ANA İÇERİK ALANI */
+.content {
+    margin-left: 260px; /* Yan menü kadar boşluk bırakır */
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 10%;
+}
+
+.hero {
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle at center, #1f1f1f 0%, #0a0a0a 100%);
+    margin-bottom: 50px;
 }
 
-header h1 {
-    font-size: 4.5rem;
+.hero h1 {
+    font-size: 64px;
     font-weight: 700;
-    letter-spacing: -0.05em;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, #ffffff, #888888);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    /* Havalı Degrade Renk */
+    background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Havalı metalik yazı efekti */
+    -webkit-text-fill-color: transparent;
 }
 
-header p {
-    font-size: 1.2rem;
+.hero p {
+    font-size: 24px;
     color: #86868b;
     max-width: 600px;
 }
 
-/* Alt İçerik Bölümleri */
+/* Bölüm Başlıkları ve Yazıları */
 section {
-    padding: 100px 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 h2 {
-    font-size: 2.5rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.5;
+    color: #d2d2d7;
+}
+
+/* Linkler ve Footer */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid #333;
+    color: #424245;
+    font-size: 14px;
+}
+
+footer a {
+    color: #0066cc;
+    text-decoration: none;
 }
