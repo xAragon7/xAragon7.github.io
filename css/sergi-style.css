@@ -1,89 +1,52 @@
-/* Sadece "Sergi" Sayfasına Özel Makyaj */
-
-/* 1. Beyaz Arka Plan ve Siyah Yazı */
+/* Sergi Teması: Beyaz Üstüne Siyah */
 body {
     background-color: #ffffff !important;
     color: #000000 !important;
 }
 
-/* 2. Yan Menü ve İçerik Alanı Ayarları */
-.content {
-    background-color: #ffffff;
-    color: #000000;
-}
+.sidebar { background-color: #f5f5f7 !important; border-right: 1px solid #e5e5e7 !important; }
+.sidebar .logo, .sidebar nav ul li a { color: #1d1d1f !important; }
+.sidebar nav ul li a:hover { background-color: #e8e8ed !important; }
 
-/* 3. Ana CSS'teki Apple Font Ailesini Koru */
-body, h1, h2, h3, p, a {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-}
+.content { background-color: #ffffff; padding-bottom: 500px; }
+.hero h1 { color: #000 !important; background: none !important; -webkit-text-fill-color: initial !important; }
 
-/* 4. Linkler ve Yazı Renklerini Siyaha/Griye Çevir */
-.content p, .content h2, .content a { color: #000000 !important; }
-.hero h1 { background: none !important; -webkit-text-fill-color: initial !important; color: #000000 !important; }
-.hero p { color: #86868b !important; }
-footer { border-top: 1px solid #eaeaea !important; color: #a1a1a6 !important; }
-
-/* RESİM GALERİSİ VE PARALLAX AYARLARI */
-
-/* 5. Resimlerin Duracağı Konteyner (Uzun bir alan olmalı ki scroll yapabilelim) */
+/* Parallax Alanı */
 #sergi-gallery {
-    margin-top: 100px;
     position: relative;
-    height: 300vh; /* Sayfanın 3 katı uzunluk */
-    overflow: hidden; /* Dışarı taşanları gizle */
+    height: 400vh; /* Kaydırma alanı için uzunluk */
 }
 
-/* 6. Her Bir Resim İçin Temel Ayarlar */
 .drawing-container {
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    pointer-events: none; /* Mouse ile tıklanmayı engelle (yazıya engel olmasın) */
-    opacity: 0; /* Başlangıçta gizli (JavaScript açacak) */
-    transition: opacity 0.5s ease-out; /* Yumuşak açılma efekti */
+    pointer-events: none;
+    transition: opacity 0.4s ease;
 }
 
-.drawing-container img {
-    border-radius: 12px;
-    object-fit: cover;
-    border: 1px solid #eaeaea; /* Hafif bir çerçeve */
+/* Katmanlama (z-index) ve Büyüklükler */
+#drawing-1 { top: 20vh; z-index: 1; } /* En arkada */
+#drawing-1 img { width: 50%; }
+
+#drawing-2 { top: 80vh; z-index: 20; } /* En önde */
+#drawing-2 img { width: 30%; }
+
+.floating-text {
+    position: absolute;
+    top: 150vh;
+    width: 100%;
+    text-align: center;
+    z-index: 10; /* Yazı ortada (1 ve 3 arkasında, 2 ve 4 önünde kalacak) */
+    padding: 0 10%;
 }
 
-/* 7. İSTEDİĞİN 5 RESMİN AYARLARI (Büyüklük, Konum ve Ön/Arka Ayarı) */
+#drawing-3 { top: 220vh; z-index: 2; } /* Arkada */
+#drawing-3 img { width: 70%; }
 
-/* 1. Resim (Yazının ARKASINDA) */
-#drawing-1 {
-    top: 50vh; /* Sayfanın %50'si aşağıda başla */
-    z-index: 1; /* Yazının arkasında (yazı 5-10 arası olacak) */
-}
-#drawing-1 img { width: 40%; height: 60vh; } /* Büyük bir portre */
+#drawing-4 { top: 290vh; z-index: 25; } /* Çok önde */
+#drawing-4 img { width: 25%; }
 
-/* 2. Resim (Yazının ÖNÜNDE) */
-#drawing-2 {
-    top: 120vh;
-    z-index: 20; /* Yazının önünde */
-}
-#drawing-2 img { width: 30%; height: 40vh; } /* Orta boy */
-
-/* 3. Resim (Yazının ARKASINDA) */
-#drawing-3 {
-    top: 190vh;
-    z-index: 2; /* Yazının arkasında */
-}
-#drawing-3 img { width: 60%; height: 80vh; } /* Çok büyük */
-
-/* 4. Resim (Yazının ÖNÜNDE) */
-#drawing-4 {
-    top: 260vh;
-    z-index: 21; /* Yazının önünde */
-}
-#drawing-4 img { width: 25%; height: 35vh; } /* Küçük boy */
-
-/* 5. Resim (Yazının ARKASINDA) */
-#drawing-5 {
-    top: 330vh;
-    z-index: 3; /* Yazının arkasında */
-}
-#drawing-5 img { width: 50%; height: 70vh; } /* Büyük boy */
+#drawing-5 { top: 350vh; z-index: 3; } /* Arkada */
+#drawing-5 img { width: 45%; }
