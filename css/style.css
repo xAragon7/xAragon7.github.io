@@ -1,120 +1,53 @@
-/* Genel Ayarlar ve Apple Font Ailesi */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilgaz - Özgeçmiş ve Portfolyo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <aside class="sidebar">
+        <div class="logo">Ilgaz</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                
+                <li class="has-submenu">
+                    <a href="#">Hobilerim</a>
+                    <ul class="submenu">
+                        <li><a href="hobiler/resim.html">Dijital Çizimler</a></li>
+                        <li><a href="hobiler/muzik.html">Müzik & Besteler</a></li>
+                    </ul>
+                </li>
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #000000;
-    color: #f5f5f7;
-    display: flex; /* Yan menü ve içeriği yan yana getirir */
-}
+                <li class="has-submenu">
+                    <a href="#">Projelerim</a>
+                    <ul class="submenu">
+                        <li><a href="projeler/isac-6g.html">Mühendislik (ISAC)</a></li>
+                        <li><a href="projeler/godot-oyun.html">Oyun Geliştirme</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-/* YAN MENÜ (SIDEBAR) TASARIMI */
-.sidebar {
-    width: 260px;
-    height: 100vh;
-    background-color: #111111;
-    padding: 40px 20px;
-    position: fixed; /* Sol tarafa sabitler */
-    border-right: 1px solid #333;
-    display: flex;
-    flex-direction: column;
-}
+    <main class="content">
+        <header class="hero">
+            <h1>Merhaba, Ben Ilgaz</h1>
+            <p>Elektronik ve Haberleşme Mühendisliği Öğrencisi | Bağımsız Oyun Geliştirici | Dijital Sanatçı</p>
+        </header>
 
-.sidebar .logo {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    padding-left: 15px;
-    letter-spacing: -1px;
-    color: #fff;
-}
+        <section id="hakkimda">
+            <h2>Hakkımda</h2>
+            <p>İTÜ'de son sınıf öğrencisiyim. Mühendisliğin teknik dünyası ile sanatın yaratıcı dünyasını bu web sitesinde bir araya getiriyorum. Yan menüden çalışmalarıma göz atabilirsin.</p>
+        </section>
+        
+        <footer>
+            <p>İletişim: <a href="mailto:seninemailin@gmail.com">seninemailin@gmail.com</a></p>
+        </footer>
+    </main>
 
-.sidebar nav ul {
-    list-style: none;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: #86868b;
-    font-size: 17px;
-    padding: 12px 15px;
-    display: block;
-    border-radius: 10px;
-    transition: all 0.3s ease; /* Yumuşak geçiş efekti */
-}
-
-.sidebar nav ul li a:hover, .sidebar nav ul li a.active {
-    background-color: #1c1c1e;
-    color: #ffffff;
-}
-
-/* ANA İÇERİK ALANI */
-.content {
-    margin-left: 260px; /* Yan menü kadar boşluk bırakır */
-    width: 100%;
-    min-height: 100vh;
-    padding: 80px 10%;
-}
-
-.hero {
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-.hero h1 {
-    font-size: 64px;
-    font-weight: 700;
-    letter-spacing: -2px;
-    margin-bottom: 20px;
-    /* Havalı Degrade Renk */
-    background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    font-size: 24px;
-    color: #86868b;
-    max-width: 600px;
-}
-
-/* Bölüm Başlıkları ve Yazıları */
-section {
-    margin-bottom: 100px;
-}
-
-h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-p {
-    font-size: 19px;
-    line-height: 1.5;
-    color: #d2d2d7;
-}
-
-/* Linkler ve Footer */
-footer {
-    padding: 40px 0;
-    border-top: 1px solid #333;
-    color: #424245;
-    font-size: 14px;
-}
-
-footer a {
-    color: #0066cc;
-    text-decoration: none;
-}
+</body>
+</html>
