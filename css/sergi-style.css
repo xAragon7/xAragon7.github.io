@@ -1,53 +1,57 @@
-/* Sergi Sayfası Genel */
+/* GENEL BEYAZ TEMA */
 .sergi-page {
     background-color: #ffffff !important;
     color: #000000 !important;
+    overflow-x: hidden;
 }
 
-/* Sidebar Düzeltmesi */
+/* MENÜ DÜZELTME (SİYAH OKUNUR MENÜ) */
 .sergi-sidebar {
-    background-color: #f5f5f7 !important;
-    border-right: 1px solid #d2d2d7 !important;
+    background-color: #ffffff !important;
+    border-right: 1px solid #e5e5e7 !important;
 }
 
-.sergi-sidebar .logo, 
+.sergi-sidebar .logo { color: #000 !important; }
+
+/* Menü Linklerini Siyah Yap */
 .sergi-sidebar nav ul li a {
-    color: #1d1d1f !important;
+    color: #000000 !important;
+    background: transparent !important;
 }
 
-/* Siyah kutuları yok etme */
 .sergi-sidebar nav ul li a:hover, 
 .sergi-sidebar nav ul li a.active {
-    background-color: #e8e8ed !important;
+    background-color: #f5f5f7 !important;
     color: #000 !important;
+    font-weight: 600;
 }
 
-.sergi-sidebar .submenu {
-    background-color: transparent !important;
-}
+.sergi-sidebar .submenu { background-color: transparent !important; }
+.sergi-sidebar .submenu li a { color: #86868b !important; }
 
-/* İçerik Alanı */
-.big-title {
-    font-size: 15vw;
-    font-weight: 900;
-    letter-spacing: -5px;
-    color: #000;
-    opacity: 0.1; /* Yazıyı biraz şeffaf yaptım ki resimler daha net olsun */
-}
-
+/* ORTADAKİ YAZI */
 .sticky-text-container {
     position: fixed;
     top: 50%;
     left: 58%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 10; /* Yazı ortada */
     width: 100%;
     text-align: center;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out; /* JavaScript ile kontrol edilecek */
 }
 
+.big-title {
+    font-size: 15vw;
+    font-weight: 900;
+    color: #000;
+}
+
+/* RESİM DÜZENİ VE KATMANLARI */
 #sergi-gallery {
     position: relative;
-    height: 600vh;
+    height: 500vh;
     margin-left: 260px;
 }
 
@@ -55,28 +59,38 @@
     position: absolute;
     width: 100%;
     display: flex;
-    justify-content: center;
-    opacity: 1;
 }
+
+/* Önde Duranlar (Yazının Üstünden Geçer) */
+.front { z-index: 20; }
+/* Arkada Duranlar (Yazının Altından Geçer) */
+.back { z-index: 5; }
+
+/* SPESİFİK RESİM KONUMLARI */
+#drawing-1 { top: 30vh; justify-content: flex-start; padding-left: 5%; }
+#drawing-1 img { width: 60vw; } /* Aşırı büyük sol */
+
+#drawing-2 { top: 110vh; justify-content: flex-end; padding-right: 10%; }
+#drawing-2 img { width: 35vw; } /* Orta boy sağ */
+
+#drawing-3 { top: 210vh; justify-content: flex-start; padding-left: 15%; }
+#drawing-3 img { width: 45vw; } /* Büyük sol */
+
+#drawing-4 { top: 310vh; justify-content: flex-end; padding-right: 5%; }
+#drawing-4 img { width: 55vw; } /* Büyük sağ */
+
+#drawing-5 { top: 410vh; justify-content: center; }
+#drawing-5 img { width: 50vw; }
 
 .drawing-container img {
-    max-width: 60%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    border-radius: 2px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
 }
-
-/* Katmanlar ve Konumlar */
-#drawing-1 { top: 50vh; z-index: 5; }
-#drawing-2 { top: 150vh; z-index: 15; }
-#drawing-3 { top: 250vh; z-index: 5; }
-#drawing-4 { top: 350vh; z-index: 15; }
-#drawing-5 { top: 450vh; z-index: 5; }
 
 .sergi-footer {
     position: relative;
     z-index: 100;
-    background: white;
-    padding: 50px;
+    background: #fff;
+    padding: 100px 0;
     text-align: center;
 }
