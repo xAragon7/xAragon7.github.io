@@ -1,9 +1,5 @@
 /* Genel Ayarlar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -23,89 +19,63 @@ body {
     z-index: 100;
 }
 
-.sidebar .logo {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: #fff;
-    letter-spacing: -1px;
-}
+.sidebar .logo { font-size: 24px; font-weight: 700; margin-bottom: 50px; color: #fff; letter-spacing: -1px; }
+.sidebar nav ul { list-style: none; }
+.sidebar nav ul li { margin-bottom: 5px; position: relative; }
+.sidebar nav ul li a { text-decoration: none; color: #86868b; font-size: 17px; padding: 12px 15px; display: block; border-radius: 10px; transition: 0.3s; }
+.sidebar nav ul li a:hover, .sidebar nav ul li a.active { background-color: #1c1c1e; color: #ffffff; }
 
-.sidebar nav ul {
-    list-style: none;
-}
+/* SUBMENU */
+.submenu { display: none; list-style: none; padding-left: 15px; margin-top: 5px; }
+.submenu li a { font-size: 14px !important; padding: 8px 15px !important; }
+.has-submenu:hover .submenu { display: block; animation: fadeIn 0.3s ease; }
 
-.sidebar nav ul li {
-    margin-bottom: 5px;
-    position: relative;
-}
-
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: #86868b;
-    font-size: 17px;
-    padding: 12px 15px;
-    display: block;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.sidebar nav ul li a:hover, .sidebar nav ul li a.active {
-    background-color: #1c1c1e;
-    color: #ffffff;
-}
-
-/* ALT MENÜ (SUBMENU) AYARLARI */
-.submenu {
-    display: none; /* Normalde gizli */
-    list-style: none;
-    padding-left: 15px;
-    margin-top: 5px;
-}
-
-.submenu li a {
-    font-size: 14px !important;
-    padding: 8px 15px !important;
-}
-
-/* Mouse ile üzerine gelince açma */
-.has-submenu:hover .submenu {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ANA İÇERİK */
-.content {
-    margin-left: 260px;
-    width: 100%;
-    padding: 80px 10%;
+.content { margin-left: 260px; width: 100%; padding: 80px 10%; }
+.hero { margin-bottom: 80px; }
+.hero h1 { font-size: 56px; margin-bottom: 20px; background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { font-size: 20px; color: #86868b; max-width: 700px; }
+
+/* VIDEO GRID (MÜZİK SAYFASI İÇİN ÖZEL) */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Esnek yan yana dizilim */
+    gap: 30px;
 }
 
-.hero h1 {
-    font-size: 64px;
+.video-card {
+    background-color: #161617;
+    border-radius: 18px;
+    padding: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid #222;
+}
+
+.video-card:hover {
+    transform: translateY(-10px); /* Üzerine gelince yukarı kaysın */
+    background-color: #1c1c1e;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Oranı */
+    height: 0;
     margin-bottom: 20px;
-    background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-.hero p {
-    font-size: 24px;
-    color: #86868b;
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-section { margin-top: 100px; }
-h2 { font-size: 32px; margin-bottom: 20px; }
-p { font-size: 19px; color: #d2d2d7; line-height: 1.6; }
+.video-card h3 { font-size: 20px; margin-bottom: 10px; color: #fff; }
+.video-card p { font-size: 15px; color: #86868b; line-height: 1.4; }
 
-footer {
-    margin-top: 100px;
-    padding: 40px 0;
-    border-top: 1px solid #333;
-    font-size: 14px;
-}
+footer { margin-top: 100px; padding: 40px 0; border-top: 1px solid #333; font-size: 14px; color: #424245; }
